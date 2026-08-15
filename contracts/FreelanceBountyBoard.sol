@@ -66,8 +66,10 @@ contract FreelanceBountyBoard {
     // - Revert if the skill string is empty
     // - Emit FreelancerRegistered(msg.sender, skill)
     function registerFreelancer(string calldata skill) external {
-        freelancers[msg.sender] = freelancer(skill);
-    
+        require(!freelancers[msg.sender].isRegistered, "Freelancer already registered");
+        require(bytes(skill).length > 0, "Skill cannot be empty");
+        freelancers[msg.sender] = freelancer(skill, true);
+
     }
 
     // -----------------------------------------------------------------------
