@@ -56,6 +56,8 @@ contract DecentralisedRaffle {
         _;
     }
 
+    uint256 [] entries;
+
     // -----------------------------------------------------------------------
     // TODO 1: enterRaffle
     // -----------------------------------------------------------------------
@@ -70,6 +72,7 @@ contract DecentralisedRaffle {
         require(isPaused);
         require(msg.value < MINIMUM_ENTRY);
         
+
         
     }
 
