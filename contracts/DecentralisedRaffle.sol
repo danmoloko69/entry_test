@@ -67,7 +67,10 @@ contract DecentralisedRaffle {
     //   unique player
     // - Emit RaffleEntered(msg.sender, <this player's total entries so far>)
     function enterRaffle() external payable {
-        // Your implementation here
+        require(isPaused);
+        require(msg.value < MINIMUM_ENTRY);
+        
+        
     }
 
     // -----------------------------------------------------------------------
