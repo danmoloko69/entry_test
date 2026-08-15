@@ -23,7 +23,7 @@ is finished does not.
   three times the chance of winning?
 - How did you count unique players separately from total entries?
 
-[Write your response here]
+[Use an array as the dont have to map any value to another value.]
 
 ---
 

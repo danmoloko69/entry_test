@@ -35,7 +35,11 @@ contract FreelanceBountyBoard {
 
     // TODO: Define the rest of your state variables here.
     // Consider:
+    struct Freelancer {
+        string name;
+    }
     // - How do you record who is registered, and with which skill?
+    mapping(address => Freelancer) freelancers;
     // - What does a bounty need to remember? (employer, description, skill,
     //   amount, status) A struct is a good fit here.
     // - How do you remember who applied for which bounty?

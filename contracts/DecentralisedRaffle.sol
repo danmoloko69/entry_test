@@ -58,6 +58,8 @@ contract DecentralisedRaffle {
 
     uint256 [] entries;
 
+    uint256 entry;
+
     // -----------------------------------------------------------------------
     // TODO 1: enterRaffle
     // -----------------------------------------------------------------------
@@ -71,9 +73,8 @@ contract DecentralisedRaffle {
     function enterRaffle() external payable {
         require(isPaused);
         require(msg.value < MINIMUM_ENTRY);
-        
-
-        
+        entries.push(entry);
+    
     }
 
     // -----------------------------------------------------------------------
@@ -103,7 +104,8 @@ contract DecentralisedRaffle {
     // in production instead. That explanation carries the marks here, not the
     // code.
     function selectWinner() external onlyOwner {
-        // Your implementation here
+        require(raffleStartTime > RAFFLE_DURATION);
+
     }
 
     // -----------------------------------------------------------------------
@@ -113,11 +115,11 @@ contract DecentralisedRaffle {
     // - Owner only, both functions
     // - Set isPaused, and emit RafflePaused() / RaffleUnpaused()
     function pause() external onlyOwner {
-        // Your implementation
+        isPaused = true;
     }
 
     function unpause() external onlyOwner {
-        // Your implementation
+        isPaused = false;
     }
 
     // -----------------------------------------------------------------------
