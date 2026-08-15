@@ -104,7 +104,6 @@ contract DecentralisedRaffle {
     // in production instead. That explanation carries the marks here, not the
     // code.
     function selectWinner() external onlyOwner {
-        require(raffleStartTime > RAFFLE_DURATION);
 
     }
 
